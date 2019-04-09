@@ -1,0 +1,196 @@
+.logo {
+    height: 50px !important;
+}
+
+.header-border {
+    border-width: 4px 0 0 0;
+    border-style: solid;
+    border-color: #20aa3f;
+}
+
+@media (max-width: 600px) {
+    .Skin #LogoContainer {
+        padding-top: 30px !important;
+    }
+
+    .logo {
+        height: 40px !important;
+    }
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px !important;
+    font-weight: normal !important;
+}
+
+h4 {
+    margin-bottom: 15px !important;
+    font-weight: 500 !important;
+}
+
+h5 {
+    margin-bottom: 15px !important;
+    font-size: 0.875em !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+h6 {
+    margin-bottom: 15px !important;
+    font-size: 0.75em !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+.Skin,
+.Skin button,
+.Skin input,
+.Skin select,
+.Skin textarea {
+    font-family: "Avenir Next", Arial, san-serif !important;
+}
+
+.Skin,
+.Skin .QuestionText,
+.Skin .QuestionBody {
+    color: #101820 !important;
+}
+
+.JFEScope .Skin .q-matrix .table-cell,
+.Skin .Matrix .QuestionBody,
+.Skin .SBS .QuestionBody {
+    font-size: 1em !important;
+}
+
+.Skin .TE .SL .InputText,
+.Skin .TE .ML .InputText,
+.Skin .TE .ESTB .InputText,
+.Skin .TE .PW .InputText,
+.Skin .TE .FORM .InputText,
+.Skin .MC .TextEntryBox,
+.Skin input.TextEntryBox,
+.Skin .TE textarea,
+.Skin textarea,
+.Skin input[type="password"],
+.Skin input[type="text"],
+.Skin input[type="search"] {
+    border: 1px solid #919395 !important;
+    background-color: white !important;
+}
+
+.Skin .TE .SL .InputText:hover,
+.Skin .TE .ML .InputText:hover,
+.Skin .TE .ESTB .InputText:hover,
+.Skin .TE .PW .InputText:hover,
+.Skin .TE .FORM .InputText:hover,
+.Skin .MC .TextEntryBox:hover,
+.Skin input.TextEntryBox:hover,
+.Skin .TE textarea:hover,
+.Skin textarea:hover,
+.Skin input[type="password"]:hover,
+.Skin input[type="text"]:hover,
+.Skin input[type="search"]:hover,
+.Skin .TE .SL .InputText:focus,
+.Skin .TE .ML .InputText:focus,
+.Skin .TE .ESTB .InputText:focus,
+.Skin .TE .PW .InputText:focus,
+.Skin .TE .FORM .InputText:focus,
+.Skin .MC .TextEntryBox:focus,
+.Skin input.TextEntryBox:focus,
+.Skin .TE textarea:focus,
+.Skin textarea:focus,
+.Skin input[type="password"]:focus,
+.Skin input[type="text"]:focus,
+.Skin input[type="search"]:focus {
+    border-color: #0072ce !important;
+    box-shadow: inset 0 0 0 1px #0072ce;
+}
+
+.Skin label.SingleAnswer,
+.Skin label.SingleAnswer.q-focused,
+.Skin label.MultipleAnswer,
+.Skin label.MultipleAnswer.q-focused {
+    background-color: #e7e8e9 !important;
+}
+
+.Skin label.SingleAnswer:hover,
+.Skin label.SingleAnswer:focus,
+.Skin label.MultipleAnswer:hover,
+.Skin label.MultipleAnswer:focus,
+.Skin label.SingleAnswer.q-checked:hover,
+.Skin label.SingleAnswer.q-checked:focus,
+.Skin label.MultipleAnswer.q-checked:hover,
+.Skin label.MultipleAnswer.q-checked:focus,
+.Skin input[type="radio"]:focus ~ .LabelWrapper > label,
+.Skin input[type="checkbox"]:focus ~ .LabelWrapper > label {
+    box-shadow: inset 0 0 0 2px #0072ce !important;
+}
+
+.Skin label.SingleAnswer.q-checked,
+.Skin label.MultipleAnswer.q-checked {
+    background: #d6e8fa !important;
+    box-shadow: inset 0 0 0 1px #0072ce;
+}
+
+.Skin label.SingleAnswer.q-checked > span:before,
+.Skin label.MultipleAnswer.q-checked > span:before,
+.Skin label.q-radio {
+    border: 1px solid #919395 !important;
+}
+
+.Skin .LabelWrapper > label.SingleAnswer.q-checked > span:before,
+.Skin .LabelWrapper > label.MultipleAnswer.q-checked > span:before {
+    background-color: #0072ce !important;
+}
+
+.Skin label.SingleAnswer:hover > span:before,
+.Skin label.MultipleAnswer:hover > span:before,
+.Skin input[type="radio"]:focus ~ .LabelWrapper > label > span:before,
+.Skin input[type="checkbox"]:focus ~ .LabelWrapper > label > span:before {
+    border-color: #0072ce !important;
+    box-shadow: inset 0 0 0 1px #0072ce;
+}
+
+.Skin label.SingleAnswer.q-checked:hover > span:before,
+.Skin label.SingleAnswer.q-checked.q-focused > span:before {
+    border-color: #0072ce !important;
+    box-shadow: 0 0 0 1px #0072ce, inset 0 0 0 2px white !important;
+}
+
+.Skin label.MultipleAnswer.q-checked:hover > span:before,
+.Skin label.MultipleAnswer.q-checked.q-focused > span:before {
+    border-color: #0072ce !important;
+    box-shadow: 0 0 0 1px #0072ce!important;
+}
+
+.Skin .MC .MAVR .QuestionBody,
+.Skin .MC .SAVR .QuestionBody,
+.Skin .QuestionBody {
+    overflow: inherit !important;
+}
+
+.Skin input[type="text"]:focus,
+.Skin input[type="radio"]:focus ~ .LabelWrapper,
+.Skin input[type="checkbox"]:focus ~ .LabelWrapper {
+    outline: 1px dotted #0072ce !important;
+    outline-offset: 1px;
+}
+
+.Skin .LabelWrapper > label.SingleAnswer > span:before,
+.Skin .LabelWrapper > label.MultipleAnswer > span:before {
+    border: 1px solid #919395;
+    background: white !important;
+}
+
+.Skin #Buttons #NextButton,
+.Skin #Buttons #PreviousButton {
+    border-radius: 4px !important;
+}
+
+.footer-border {
+    border-width: 1px 0 0 0;
+    border-color: #b4b5b6;
+    margin-bottom: 15px;
+}
