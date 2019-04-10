@@ -181,7 +181,7 @@ h6 {
 .Skin .LabelWrapper > label.SingleAnswer > span:before,
 .Skin .LabelWrapper > label.MultipleAnswer > span:before {
     border: 1px solid #919395;
-    background: white !important;
+    background-color: white !important;
 }
 
 .Skin #Buttons #NextButton,
