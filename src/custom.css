@@ -138,6 +138,7 @@ h6 {
 .Skin label.MultipleAnswer.q-checked > span:before,
 .Skin label.q-radio {
     border: 1px solid #919395 !important;
+    background-color: white;
 }
 
 .Skin .LabelWrapper > label.SingleAnswer.q-checked > span:before,
@@ -182,6 +183,17 @@ h6 {
 .Skin .LabelWrapper > label.MultipleAnswer > span:before {
     border: 1px solid #919395;
     background-color: white !important;
+}
+
+.Skin label.MultipleAnswer.LabelPositionBELOW,
+.Skin label.SingleAnswer.LabelPositionBELOW {
+    height: 52px !important;
+}
+
+
+.Skin label.MultipleAnswer.LabelPositionBELOW > span,
+.Skin label.SingleAnswer.LabelPositionBELOW > span {
+    padding-bottom: 28px !important;
 }
 
 .Skin #Buttons #NextButton,
