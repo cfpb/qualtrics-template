@@ -8,6 +8,16 @@
     border-color: #20aa3f;
 }
 
+@media only screen and (max-width: 480px) {
+    .Skin #Buttons #NextButton, .Skin #Buttons #PreviousButton {
+        font-size: 16px !important;
+    }
+    .Skin .MAHR .ChoiceStructure td.LabelContainer,
+    .Skin .SAHR .ChoiceStructure td.LabelContainer {
+        margin-bottom: 5px !important;
+    }
+}
+
 @media (max-width: 600px) {
     .Skin #LogoContainer {
         padding-top: 30px !important;
@@ -42,6 +52,22 @@ h6 {
     font-weight: 600 !important;
     letter-spacing: 1px !important;
     text-transform: uppercase !important;
+}
+
+p + p,
+p + h2,
+p + h3,
+p + h4,
+p + details,
+summary + p,
+summary + h2,
+summary + h3,
+summary + h4 {
+    margin-top: 15px;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
 }
 
 .Skin,
@@ -138,6 +164,7 @@ h6 {
 .Skin label.MultipleAnswer.q-checked > span:before,
 .Skin label.q-radio {
     border: 1px solid #919395 !important;
+    background-color: white;
 }
 
 .Skin .LabelWrapper > label.SingleAnswer.q-checked > span:before,
@@ -184,9 +211,37 @@ h6 {
     background-color: white !important;
 }
 
+.Skin label.MultipleAnswer.LabelPositionBELOW,
+.Skin label.SingleAnswer.LabelPositionBELOW {
+    height: 52px !important;
+}
+
+
+.Skin label.MultipleAnswer.LabelPositionBELOW > span,
+.Skin label.SingleAnswer.LabelPositionBELOW > span {
+    padding-bottom: 28px !important;
+}
+
+.Skin .QuestionOuter {
+    padding-bottom: 0 !important;
+}
+
+@media (max-width: 770px) {
+    .Skin #SkinContent #Buttons {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
 .Skin #Buttons #NextButton,
 .Skin #Buttons #PreviousButton {
     border-radius: 4px !important;
+}
+
+@media (max-width: 770px) {
+    .Skin #BrandingFooter, .Skin #Footer {
+        margin-top: 60px !important;
+    }
 }
 
 .footer-border {
