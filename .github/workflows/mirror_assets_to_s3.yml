@@ -22,7 +22,7 @@ jobs:
             curr_date=$(date +"%a, %d %b %Y %T %z")
             string="PUT\n\n$content_type\n$curr_date\n/$bucket$aws_prefix$file"
             signature=$(echo -en "${string}" | openssl sha1 -hmac "${{secrets.S3SECRET}}" -binary | base64)
-            curl -X PUT -v -T "$dir/$file" \
+            curl -X PUT --http2 -v -T "$dir/$file" \
               -H "Host: $bucket.s3.amazonaws.com" \
               -H "Date: $curr_date" \
               -H "Content-Type: $content_type" \
