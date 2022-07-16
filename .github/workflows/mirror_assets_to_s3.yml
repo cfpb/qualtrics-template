@@ -6,30 +6,17 @@ on:
       - main
 
 jobs:
-  push:
+  upload:
     runs-on: ubuntu-latest
+    env:
+      S3KEY: ${{secrets.S3KEY}}
+      S3SECRET: ${{secrets.S3SECRET}}
     steps:
       - uses: actions/checkout@v3
-
-      - name: Mirror assets
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+        run: pip install boto3
         run: |
-          function putS3 {
-            dir=$1
-            file=$2
-            content_type="text/$3"
-            aws_prefix='/assets/qualtrics/'
-            bucket='files.consumerfinance.gov'
-            curr_date=$(date +"%a, %d %b %Y %T %z")
-            string="PUT\n\n$content_type\n$curr_date\n/$bucket$aws_prefix$file"
-            signature=$(echo -en "${string}" | openssl sha1 -hmac "${{secrets.S3SECRET}}" -binary | base64)
-            curl -X PUT --http2 -v -T "$dir/$file" \
-              -H "Host: $bucket.s3.amazonaws.com" \
-              -H "Date: $curr_date" \
-              -H "Content-Type: $content_type" \
-              -H "Authorization: AWS ${{secrets.S3KEY}}:$signature" \
-              "http://$bucket.s3.amazonaws.com$aws_prefix$file"
-          }
+          python .github/workflows/upload.py
 
-          for file in src/*; do
-            putS3 "src" "${file##*/}" "${file##*.}"
-          done
