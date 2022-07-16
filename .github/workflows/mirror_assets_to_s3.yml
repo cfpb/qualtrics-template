@@ -16,10 +16,10 @@ jobs:
           function putS3 {
             path=$1
             file=$2
+            content_type="text/$3"
             aws_path='/assets/qualtrics/'
             bucket='files.consumerfinance.gov'
             date=$(date +"%a, %d %b %Y %T %z")
-            content_type='text/css'
             string="PUT\n\n$content_type\n$date\n/$bucket$aws_path$file"
             signature=$(echo -en "${string}" | openssl sha1 -hmac "${{secrets.S3SECRET}}" -binary | base64)
             curl -X PUT -k -v -T "$path/$file" \
@@ -30,6 +30,6 @@ jobs:
               "https://$bucket.s3.amazonaws.com$aws_path$file"
           }
 
-          for file in "src/*"; do
-            putS3 "src" "${file##*/}"
+          for file in src/*; do
+            putS3 "src" "${file##*/}" "${file##*.}"
           done
