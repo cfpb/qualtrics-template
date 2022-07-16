@@ -1,4 +1,4 @@
-name: Mirror assets to S3
+name: Mirror assets to S3.
 
 on:
   push:
@@ -14,20 +14,20 @@ jobs:
       - name: Mirror assets
         run: |
           function putS3 {
-            path=$1
+            dir=$1
             file=$2
             content_type="text/$3"
-            aws_path='/assets/qualtrics/'
+            aws_prefix='/assets/qualtrics/'
             bucket='files.consumerfinance.gov'
-            date=$(date +"%a, %d %b %Y %T %z")
-            string="PUT\n\n$content_type\n$date\n/$bucket$aws_path$file"
+            curr_date=$(date +"%a, %d %b %Y %T %z")
+            string="PUT\n\n$content_type\n$curr_date\n/$bucket$aws_prefix$file"
             signature=$(echo -en "${string}" | openssl sha1 -hmac "${{secrets.S3SECRET}}" -binary | base64)
-            curl -X PUT -k -v -T "$path/$file" \
+            curl -X PUT -v -T "$dir/$file" \
               -H "Host: $bucket.s3.amazonaws.com" \
-              -H "Date: $date" \
+              -H "Date: $curr_date" \
               -H "Content-Type: $content_type" \
               -H "Authorization: AWS ${{secrets.S3KEY}}:$signature" \
-              "https://$bucket.s3.amazonaws.com$aws_path$file"
+              "https://$bucket.s3.amazonaws.com$aws_prefix$file"
           }
 
           for file in src/*; do
