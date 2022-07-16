@@ -13,7 +13,7 @@ jobs:
 
       - name: Mirror assets
         run: |
-          function putS3
+          function putS3 {
             path=$1
             file=$2
             aws_path='/assets/qualtrics/'
