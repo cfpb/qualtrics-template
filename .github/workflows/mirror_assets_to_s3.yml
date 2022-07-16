@@ -22,12 +22,12 @@ jobs:
             curr_date=$(date +"%a, %d %b %Y %T %z")
             string="PUT\n\n$content_type\n$curr_date\n/$bucket$aws_prefix$file"
             signature=$(echo -en "${string}" | openssl sha1 -hmac "${{secrets.S3SECRET}}" -binary | base64)
-            curl -X PUT -k -v -T "$dir/$file" \
+            curl -X PUT -v -T "$dir/$file" \
               -H "Host: $bucket.s3.amazonaws.com" \
               -H "Date: $curr_date" \
               -H "Content-Type: $content_type" \
               -H "Authorization: AWS ${{secrets.S3KEY}}:$signature" \
-              "https://$bucket.s3.amazonaws.com$aws_prefix$file"
+              "http://$bucket.s3.amazonaws.com$aws_prefix$file"
           }
 
           for file in src/*; do
