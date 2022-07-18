@@ -4,8 +4,8 @@ function putS3 {
   dir=$1
   file=$2
   content_type="text/$3"
-  aws_prefix='/assets/qualtrics/'
-  bucket='files.consumerfinance.gov'
+  aws_prefix="${AWS_PREFIX:-/assets/qualtrics/}"
+  bucket="${AWS_BUCKET:-files.consumerfinance.gov}"
   curr_date=$(date +"%a, %d %b %Y %T %z")
   string="PUT\n\n$content_type\n$curr_date\n/$bucket$aws_prefix$file"
   signature=$(echo -en "${string}" | openssl sha1 -hmac "$AWS_SECRET" -binary | base64)
